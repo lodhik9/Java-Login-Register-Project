@@ -34,10 +34,21 @@ public class LoginServlet extends HttpServlet {
 		//System.out.println("here");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+
+//		if(username.equals("lodhi")) {
+//			response.sendRedirect("welcome.jsp");
+//			System.out.println("Equals");
+//			
+//		}
 		
 		if(userDao.isValidUser(username, password)) {
 			HttpSession session = request.getSession();
+			session.setAttribute("username", username);
+			response.sendRedirect("welcome.jsp");
 			
+		}else {
+			response.sendRedirect("login.jsp?error=1");
+			System.out.println("Error");
 		}
 		
 	}

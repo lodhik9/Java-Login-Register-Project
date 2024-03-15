@@ -19,6 +19,13 @@
 	</form>
 	
 	<p><a href="index.html"> Back to Home</a></p>
+	
+	<% String error = request.getParameter("error");
+	if(error != null && error.equals("1")){%>
+		<p style="color: red;">Invalid Username or Passowrd.</p>
+	<%}
+	%>
+	
 </div>
 </body>
 </html>

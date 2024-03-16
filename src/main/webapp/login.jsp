@@ -26,6 +26,10 @@
 	<%}
 	%>
 	
+	<% String rs = request.getParameter("registration");
+	if(rs != null && rs.equals("success")) {%>
+	<p style="color: green;">Your registration is successful</p>
+	<% } %>
 </div>
 </body>
 </html>
